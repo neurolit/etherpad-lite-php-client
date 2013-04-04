@@ -18,7 +18,7 @@ class Client {
     $this->port = $port ;
     $this->apiKey = $apiKey ;
     $this->protocol = $protocol ;
-    $this->apiUrl = $protocol."://".$server.":".$port."/api/1.2.1/" ;
+    $this->apiUrl = $protocol."://".$server.":".$port."/api/".self::API_VERSION."/" ;
     $this->browser = $browser ? $browser : new Browser() ;
   }
 
