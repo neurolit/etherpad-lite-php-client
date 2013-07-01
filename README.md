@@ -1,5 +1,5 @@
-Etherpad-Lite PHP API
-=====================
+Etherpad-Lite API PHP Client
+============================
 
 ## What is it?
 
