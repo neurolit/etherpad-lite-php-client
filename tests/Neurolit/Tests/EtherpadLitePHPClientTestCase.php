@@ -51,6 +51,30 @@ class EtherpadLitePHPClientTestCase extends \PHPUnit_Framework_TestCase{
   /**
    * @dataProvider etherpadConfs
    */
+  public function testSetPassword($protocol,$server,$port,$apiKey,$suffix,$text){
+    $padID = "Cesar";
+    $password = "tuquoquemifili";
+    $responseStub = $this->_createResponseStub("0","ok");
+    $browserMock = $this->_createBrowserMock(array(
+                                                   array(
+                                                         $this->once(),
+                                                         $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/setPassword?apikey='.$apiKey.'&padID='.$padID.'&password='.$password),
+                                                         $this->returnValue($responseStub)
+                                                         )
+                                                   )
+                                             ) ;
+    $etherpad = new Client($protocol,
+                           $server,
+                           $port,
+                           $apiKey) ;
+    $etherpad->setBrowser($browserMock) ;
+
+    return $etherpad->setPassword($padID,$password);
+  }
+
+  /**
+   * @dataProvider etherpadConfs
+   */
   public function testCreatePublicPad($protocol,$server,$port,$apiKey,$suffix,$text){
     // Les réponses sont OK
     $responseStub = $this->_createResponseStub("0","ok");

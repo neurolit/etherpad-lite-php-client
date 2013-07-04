@@ -18,7 +18,7 @@ class Client {
     $this->port = $port ;
     $this->apiKey = $apiKey ;
     $this->protocol = $protocol ;
-    $this->apiUrl = $protocol."://".$server.":".$port."/api/1.2.1/" ;
+    $this->apiUrl = $protocol."://".$server.":".$port."/api/".self::API_VERSION."/" ;
     $this->browser = $browser ? $browser : new Browser() ;
   }
 
@@ -48,6 +48,10 @@ class Client {
     } else {
       return $this->createProtectedPad($password,$suffix,$text) ;
     }
+  }
+
+  public function setPassword($padID,$password) {
+    $this->execAction('setPassword', array("padID" => $padID,"password" => $password)) ;
   }
 
   public function getText($padID){
