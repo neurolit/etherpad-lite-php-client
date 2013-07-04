@@ -50,6 +50,10 @@ class Client {
     }
   }
 
+  public function setPassword($padID,$password) {
+    $this->execAction('setPassword', array("padID" => $padID,"password" => $password)) ;
+  }
+
   public function getText($padID){
     $jsonResponse = $this->execAction('getText', array("padID" => $padID)) ;
     return $jsonResponse->{'data'}->{'text'};
