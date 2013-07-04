@@ -1,7 +1,7 @@
 Changes
 =======
 
-## dev
+## 0.2.0 
 
 * function setPassword(padID,password) added
 
