@@ -22,18 +22,30 @@ class Client {
     $this->browser = $browser ? $browser : new Browser() ;
   }
 
+  /**
+   * @codeCoverageIgnore
+   */
   public function getPort(){
     return $this->port ;
   }
 
+  /**
+   * @codeCoverageIgnore
+   */
   public function getServer(){
     return $this->server ;
   }
 
+  /**
+   * @codeCoverageIgnore
+   */
   public function getProtocol(){
     return $this->protocol ;
   }
 
+  /**
+   * @codeCoverageIgnore
+   */
   public function getApiKey(){
     return $this->apiKey ;
   }
