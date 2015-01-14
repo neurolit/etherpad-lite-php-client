@@ -1,7 +1,7 @@
 Changes
 =======
 
-## Dev
+## 0.2.1 
 
 * upgrade to Buzz v0.13
 
